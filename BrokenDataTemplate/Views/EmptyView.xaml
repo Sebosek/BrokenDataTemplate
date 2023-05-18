@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<controls:AppContentView 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:BrokenDataTemplate.Controls"
+    x:Class="BrokenDataTemplate.Views.EmptyView"
+    Title="Empty">
+    <Label Text="This is empty view" />
+</controls:AppContentView>

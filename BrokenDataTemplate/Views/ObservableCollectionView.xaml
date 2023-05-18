@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<controls:AppContentView 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
+    xmlns:controls="using:BrokenDataTemplate.Controls"
+    x:Class="BrokenDataTemplate.Views.ObservableCollectionView"
+    Title="Bindings">
+    <VerticalStackLayout Padding="12">
+        <Label Text="{Binding Counter}" />
+        <Button Command="{Binding IncreaseCommand}" Text="Increase" />
+        <Button Command="{Binding DecreaseCommand}" Text="Decrease" />
+        <Button Command="{Binding AddDateCommand}" Text="Add" />
+
+        <CollectionView ItemsSource="{Binding Values}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Type system:String}">
+                    <VerticalStackLayout>
+                        <Label Text="{Binding .}" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</controls:AppContentView>

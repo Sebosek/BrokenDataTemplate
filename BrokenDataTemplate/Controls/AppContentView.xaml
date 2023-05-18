@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="BrokenDataTemplate.Controls.AppContentView"
+    x:Name="This">
+    <ContentView.ControlTemplate>
+        <ControlTemplate>
+            <Frame 
+                BindingContext="{x:Reference This}" 
+                BackgroundColor="Transparent" 
+                BorderColor="Transparent" 
+                Margin="0" 
+                Padding="0" 
+                CornerRadius="0">
+                <Grid
+                    RowDefinitions="auto, *"
+                    BackgroundColor="{StaticResource Primary}"
+                    Margin="0"
+                    Padding="0">
+                    <Label 
+                        Grid.Row="0"
+                        Style="{StaticResource Title}"
+                        HeightRequest="60"
+                        VerticalTextAlignment="Center" 
+                        HorizontalOptions="Center" 
+                        Text="{TemplateBinding Title}" />
+
+                    <Border 
+                        Grid.Row="1" 
+                        BackgroundColor="{StaticResource White}" 
+                        Margin="0" 
+                        Padding="0" 
+                        Stroke="{StaticResource WhiteBrush}" 
+                        StrokeThickness="0" 
+                        StrokeShape="RoundRectangle 24, 24, 0, 0">
+
+                        <ScrollView>
+                            <ContentPresenter />
+                        </ScrollView>
+                    </Border>
+                </Grid>
+            </Frame>
+        </ControlTemplate>
+    </ContentView.ControlTemplate>
+</ContentView>
